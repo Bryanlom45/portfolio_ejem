@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header .container {
     background-color: var(--color-muted);
-    margin-top: 1px;
+    margin-top: 10px;
     border-radius: 20px;
     padding: 8px 25px;
 }
@@ -506,6 +506,7 @@ section {
     align-items: center;
     padding: 5px 20px;
     border-radius: 11px;
+    margin-top: -10px;
 }
 
 .header .logo h2 {
