@@ -18,7 +18,7 @@
 body {
     font-family: var(--font-body);
     color: var(--color-light);
-      background: linear-gradient(235deg, #000000, #17116e);
+    background: linear-gradient(235deg, #000000, #17116e);
     margin: 0;
     padding: 0;
 }
@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   margin: 0;
 }
-
 
 /*-----------------------------------------
      Hero
@@ -60,8 +59,6 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   inset: 0;
-
-  
   z-index: 0;
 }
 
@@ -361,7 +358,6 @@ section {
   color: var(--color-light);
   margin-bottom: 10px;
   font-weight: 700;
-  
 }
 
 .about-description {
@@ -385,8 +381,6 @@ section {
   color: var(--color-accent);
   text-decoration: none;
 }
-
-
 
 .about-quote {
   font-style: italic;
@@ -459,12 +453,14 @@ section {
   opacity: 0; /* Oculto al inicio */
   pointer-events: none; /* No clickeable al inicio */
 }
+
 .btn-cv-floating.visible {
   opacity: 1;
   pointer-events: auto;
   animation: slideUpBounce 0.6s ease-out;
 
 }
+
 .btn-cv-floating:hover {
   background: var(--color-skills);
   transform: scale(1.05);
@@ -487,11 +483,9 @@ section {
   }
 }
 
-
 /*=========================
   Projects Section
 =========================*/
-
 .projects {
   padding: 80px 0;
   color: var(--color-light);
@@ -546,7 +540,7 @@ section {
 
 /* Tarjeta individual */
 .card_project {
-background-color: var(--color-card);
+  background-color: var(--color-card);
   border-radius: 16px;
   width: 330px;
   height: 280px;
@@ -578,7 +572,7 @@ background-color: var(--color-card);
   left: 0;
   right: 0;
   width: 100%;
-background: linear-gradient(to top, #050718, #080627, transparent);
+  background: linear-gradient(to top, #050718, #080627, transparent);
   padding: 20px;
   opacity: 1;
   z-index: 10;
@@ -623,7 +617,47 @@ background: linear-gradient(to top, #050718, #080627, transparent);
   transform: scale(1.1);
 }
 
-@media (max-width: 400px) {
+/*=========================
+  Responsive tablets o pantallas medianas
+=========================*/
+@media (max-width: 1024px) {
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    border-radius: 11px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .header .logo h2 {
+    font-size: 20px;
+    order: 1;
+  }
+
+  .header .social-links {
+    order: 2;
+  }
+  
+  .header .navbar {
+    order: 3;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    color: var(--color-primary);
+    font-size: 28px;
+    order: 3;
+  }
+  
+  .mobile-nav-active .navbar {
+    display: block;
+  }
+
   .card_project {
     width: 100%;
     height: auto;
@@ -635,66 +669,27 @@ background: linear-gradient(to top, #050718, #080627, transparent);
     height: auto;
   }
 }
+
+@media (max-width: 992px){
+  #hero h1 {
+    font-size: 50px;
+    line-height: 28px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+  }
+}
 /*=========================
-  Responsive
+  Responsive telefonos o  pantallas chicas
 =========================*/
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 30px;
+    line-height: 14px;
+  }
 
-@media (max-width: 992px) {
-
-.header .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 20px;
-    border-radius: 11px;
-}
-
-.header .logo h2 {
-    font-size: 20px;
-    order: 1;
-}
-
-.header .social-links {
-    order: 2;
-}
-.navbar ul {
-    display: none;
-}
-
-.header .navbar {
-    order: 3;
-}
-
-.mobile-nav-toggle {
-    display: block;
-    font-size: 28px;
-    color: var(--color-primary);
-    order: 3;
-}
-
-.mobile-nav-active .navbar {
-    display: block;
-}
-}
-
-@media (max-width: 968px) {
-#hero h1 {
-    font-size: 28px;
-    line-height: 9px;
-}
-
-#hero h2 {
+  #hero h2 {
     font-size: 14px;
-    line-height: 24px;
+  }
 }
-}
-
-@media (max-width: 992px) {
-#hero {
-    margin-bottom: -60px;
-}
-}
-
-
-
-

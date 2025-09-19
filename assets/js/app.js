@@ -5,6 +5,7 @@
 
     toggle.addEventListener("click", function () {
       document.body.classList.toggle("mobile-nav-active");
+      document.classList.toggle("bi-x");
     });
   });
 
@@ -33,7 +34,7 @@ const proyectos = [
   {
     titulo: "Portafolio Creativo",
     descripcion: "HTML, CSS, animaciones personalizadas",
-    imagen: "assets/img/projects/portfolio.jpeg",
+    imagen: "assets/img/projects/ctg.jpeg",
     github: "#",
     demo: "#"
   },
@@ -41,7 +42,7 @@ const proyectos = [
     {
     titulo: "Portafolio Creativo",
     descripcion: "HTML, CSS, animaciones personalizadas",
-    imagen: "assets/img/projects/portfolio.jpeg",
+    imagen: "assets/img/projects/spa.jpeg",
     github: "#",
     demo: "#"
   },
