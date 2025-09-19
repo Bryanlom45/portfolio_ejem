@@ -660,13 +660,13 @@ section {
 
   .card_project {
     width: 100%;
-    height: auto;
+    
     padding: 10px;
   }
 
   .project_wrap img {
     width: 100%;
-    height: auto;
+    
   }
 }
 
