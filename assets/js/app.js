@@ -2,15 +2,27 @@
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".mobile-nav-toggle");
     const header = document.querySelector(".header");
+    const navlinks = document.querySelectorAll(".header nav a");
 
     toggle.addEventListener("click", function () {
       document.body.classList.toggle("mobile-nav-active");
-      document.classList.toggle("bi-x");
+      toggle.classList.toggle("bi-x");
     });
+
+    navlinks.forEach(link=> {
+      link.addEventListener("click", function () {
+        setTimeout(()=>{
+        document.body.classList.remove("mobile-nav-active");
+        toggle.classList.remove("bi-x");
+        toggle.setAttribute("aria-expanded", "false");
+        },400);
+      });
+    });
+    
   });
 
 
-    const cvButton = document.querySelector('.btn-cv-floating');
+  const cvButton = document.querySelector('.btn-cv-floating');
   const aboutSection = document.querySelector('#about');
 
   window.addEventListener('scroll', () => {
@@ -22,6 +34,8 @@
       cvButton.classList.remove('visible');
     }
   });
+
+
 
 const proyectos = [
   {
@@ -49,6 +63,7 @@ const proyectos = [
   // Agrega más proyectos aquí
 ];
 
+
 const container = document.getElementById("projectsContainer");
 
 proyectos.forEach(proyecto => {
@@ -72,3 +87,13 @@ proyectos.forEach(proyecto => {
   container.appendChild(card);
 });
 
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterToggle = document.querySelector('.filter');
+    const panelFilter = document.getElementById('panel-filter');
+
+    filterToggle.addEventListener('click', () => {
+      console.log('Filtro clickeado');
+      panelFilter.classList.toggle('active');
+    });
+  });

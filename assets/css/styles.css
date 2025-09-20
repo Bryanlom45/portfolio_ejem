@@ -15,6 +15,10 @@
   --color-card:rgba(255, 255, 255, 0.048);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--color-light);
@@ -189,7 +193,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   display: none;
   margin-right: 10px;
+  transition: transform 0.3s ease;
 }
+
+.mobile-nav-toggle.bi-x {
+  transform: rotate(90deg);
+}
+
 
 .mobile-nav-active .mobile-nav-toggle {
   color: var(--text-light);
@@ -489,6 +499,7 @@ section {
 .projects {
   padding: 80px 0;
   color: var(--color-light);
+  position: relative;
 }
 
 .projects .header-projects {
@@ -616,6 +627,78 @@ section {
   background: var(--color-skills);
   transform: scale(1.1);
 }
+
+/*---------------------------------------------
+ panel filter
+---------------------------------------------*/
+.panel-filter{
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  width: 320px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.panel-filter.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+
+}
+
+.btn-filter {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: #ffffff22;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+  background: #ffffff55;
+  transform: scale(1.05);
+}
+
+.btn-filter.active {
+  background: #fff;
+  color: #3f4ed6;
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #3f4ed6 inset;
+}
+
+@keyframes fadeSlideScale {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.panel-filter.active {
+  animation: fadeSlideScale 0.4s ease forwards;
+}
+
+
+
+
 
 /*=========================
   Responsive tablets o pantallas medianas
