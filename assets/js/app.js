@@ -88,12 +88,51 @@ proyectos.forEach(proyecto => {
 });
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterToggle = document.querySelector('.filter');
-    const panelFilter = document.getElementById('panel-filter');
+document.addEventListener('DOMContentLoaded', () => {
+  const panel = document.getElementById('panel-filter');
+  const filterIcon = document.getElementById('filter-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const filterButtons = document.querySelectorAll('.btn-filter');
 
-    filterToggle.addEventListener('click', () => {
-      console.log('Filtro clickeado');
-      panelFilter.classList.toggle('active');
+  // 👉 Abrir panel al hacer clic en el ícono de filtro
+  filterIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    panel.classList.add('active');
+    filterIcon.style.display = 'none';
+  });
+
+  // 👉 Cerrar panel al hacer clic en el ícono de cierre (bi-x-circle)
+  closeIcon.addEventListener('click', () => {
+    panel.classList.remove('active');
+    filterIcon.style.display = 'inline-block';
+  });
+
+  // 👉 Cerrar panel al seleccionar un filtro
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      panel.classList.remove('active');
+      filterIcon.style.display = 'inline-block';
     });
   });
+
+  // 👉 Cerrar panel al hacer scroll
+  window.addEventListener('scroll', () => {
+    if (panel.classList.contains('active')) {
+      panel.classList.remove('active');
+      filterIcon.style.display = 'inline-block';
+    }
+  });
+
+  // 👉 Cerrar panel al hacer clic fuera de él
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !filterIcon.contains(e.target)) {
+      panel.classList.remove('active');
+      filterIcon.style.display = 'inline-block';
+    }
+  });
+});
+
+
+
+
+

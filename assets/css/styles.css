@@ -633,9 +633,9 @@ section {
 ---------------------------------------------*/
 .panel-filter{
   position: absolute;
-  top: 80px;
-  right: 30px;
-  width: 320px;
+  top: 100px;
+  right: 132px;
+  width: 420px;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -660,7 +660,7 @@ section {
   display: inline-block;
   margin: 0.5rem;
   padding: 0.6rem 1.2rem;
-  background: #ffffff22;
+  background: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -697,6 +697,37 @@ section {
 }
 
 
+.btn-close-panel {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #3f4ed6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-close-panel:hover {
+  background: #3f4ed6;
+  color: #fff;
+}
+
+#close-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 35px;
+  color: var(--color-skills);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+#close-icon:hover {
+  transform: rotate(90deg);
+}
 
 
 
@@ -772,5 +803,10 @@ section {
 
   #hero h2 {
     font-size: 14px;
+  }
+
+  .panel-filter {
+    right: 30px;
+    width: 310px;
   }
 }
