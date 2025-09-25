@@ -52,7 +52,6 @@
     </header>
 
     <!---->
-
     <main>
 
         <!---About-->
@@ -107,23 +106,28 @@
       <h2>Mis Proyectos</h2>
     </div>
 
-    <div class="filter">
-      <h5>filter</h5>
-      <i class="bi bi-filter-circle" id="filter-icon"></i>
 
-          <!--panel filter-->
-        <div class="panel-filter" id="panel-filter">
-          <i class="bi bi-x-circle" id="close-icon"></i>
-          <button class="btn-filter" data-filter="all">todos</button>
-          <button class="btn-filter" data-filter="php">php</button>
-          <button class="btn-filter" data-filter="js">JavaScript</button>
-          <button class="btn-filter" data-filter="angular">angular</button>
-          <button class="btn-filter" data-filter="laravel">laravel</button>
-          <button class="btn-filter" data-filter="wordpres">wordpres</button>
-          <button class="btn-filter" data-filter="ajax">Ajax</button>
-        </div>
+    <div class="filter-wrapper">
+
+      <button class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filter-panel">
+        <span>Fitrar</span>
+        <i class="bi bi-filter-circle"></i>
+      </button>
+
+      <div class="filter-panel" id="filter-panel" hidden role="region" aria-label="Panel de filtros">
+
+          <div class="filter-options">
+            <button class="btn-filter" data-filter="all">Todos</button>
+            <button class="btn-filter" data-filter="php">PHP</button>
+            <button class="btn-filter" data-filter="js">JavaScript</button>
+            <button class="btn-filter" data-filter="angular">Angular</button>
+            <button class="btn-filter" data-filter="laravel">Laravel</button>
+            <button class="btn-filter" data-filter="wordpress">WordPress</button>
+            <button class="btn-filter" data-filter="ajax">Ajax</button>
+          </div>
+
+      </div>
     </div>
-
 
     </div>
 
@@ -133,6 +137,7 @@
   </div>
 </section>
 
+<!-- btn VC -->
 <a href="assets/docs/cv_Lopez_Martinez_Bryan_Jair.pdf" class="btn-cv-floating" download aria-label="Descargar CV">
   📄 Mi CV
 </a>
