@@ -760,7 +760,6 @@ section {
 =========================*/
 @media (max-width: 768px) {
 
-
   #hero h1 {
     font-size: 30px;
     line-height: 14px;
@@ -770,7 +769,6 @@ section {
     font-size: 14px;
   }
 
-  
   .section-title h2 {
     align-items: center;
     text-align: center;
