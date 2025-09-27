@@ -643,9 +643,9 @@ section {
 .filter-panel {
   position: absolute;
   top: 100%;
-  right: 0;
   width: 300px;
   padding: 1.5rem;
+  margin: 5px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   border-radius: 16px;
@@ -789,6 +789,11 @@ section {
     display: flex;
     justify-content: center; /* centra horizontalmente */
     align-items: center;     /* centra verticalmente */
+  }
+
+  .filter-panel {
+    display: flex;
+    justify-content: center;
   }
 
 }
