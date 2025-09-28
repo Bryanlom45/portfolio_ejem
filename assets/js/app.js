@@ -89,41 +89,61 @@ proyectos.forEach(proyecto => {
   container.appendChild(card);
 });
 
-const toggleBtn = document.getElementById('filter-toggle');
+const togglebtn = document.getElementById('filter-toggle');
 const panel = document.getElementById('filter-panel');
-const closeBtn = document.getElementById('filter-close');
 const filterButtons = document.querySelectorAll('.btn-filter');
+const icon = document.getElementById('filter-icon');
 
-// Abrir panel
-toggleBtn.addEventListener('click', () => {
-  const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-  toggleBtn.setAttribute('aria-expanded', !expanded);
+togglebtn.addEventListener('click', () => {
+
+  const expanded = togglebtn.getAttribute('aria-expanded') === 'true';
+  togglebtn.setAttribute('aria-expanded', !expanded);
   panel.hidden = expanded;
   panel.classList.toggle('active');
+
+    // Cambiar el ícono
+  if (expanded) {
+    icon.classList.remove('bi-x-circle');
+    icon.classList.add('bi-filter-circle');
+  } else {
+    icon.classList.remove('bi-filter-circle');
+    icon.classList.add('bi-x-circle');
+  }
+
+
+
 });
 
-// Cerrar panel
-closeBtn.addEventListener('click', () => {
-  toggleBtn.setAttribute('aria-expanded', 'false');
-  panel.hidden = true;
-  panel.classList.remove('active');
-});
+//cierra el panel si se hace clci fuera
+document.addEventListener('click',  (e) => {
+  const isClickInside = togglebtn.contains(e.target) || panel.contains(e.target);
 
-// Cerrar al hacer clic fuera
-document.addEventListener('click', (e) => {
-  if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
-    toggleBtn.setAttribute('aria-expanded', 'false');
+  if(!isClickInside && !panel.hidden){
+    togglebtn.setAttribute('aria-expanded', false);
     panel.hidden = true;
     panel.classList.remove('active');
   }
 });
 
-// Activar filtro
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    // Aquí puedes filtrar tus tarjetas con JS
+// Cerrar si se hace scroll
+window.addEventListener('scroll', () => {
+  if (!panel.hidden) {
+    togglebtn.setAttribute('aria-expanded', false);
+    panel.hidden = true;
+    panel.classList.remove('active');
+  }
+});
+
+// Cerrar al hacer clic en un botón del panel
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    togglebtn.setAttribute('aria-expanded', false);
+    panel.hidden = true;
+    panel.classList.remove('active');
   });
 });
+
+
+
+
+
