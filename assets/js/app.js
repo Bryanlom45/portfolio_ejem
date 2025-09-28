@@ -92,7 +92,6 @@ proyectos.forEach(proyecto => {
 const togglebtn = document.getElementById('filter-toggle');
 const panel = document.getElementById('filter-panel');
 const filterButtons = document.querySelectorAll('.btn-filter');
-const icon = document.getElementById('filter-icon');
 
 togglebtn.addEventListener('click', () => {
 
@@ -100,17 +99,6 @@ togglebtn.addEventListener('click', () => {
   togglebtn.setAttribute('aria-expanded', !expanded);
   panel.hidden = expanded;
   panel.classList.toggle('active');
-
-    // Cambiar el ícono
-  if (expanded) {
-    icon.classList.remove('bi-x-circle');
-    icon.classList.add('bi-filter-circle');
-  } else {
-    icon.classList.remove('bi-filter-circle');
-    icon.classList.add('bi-x-circle');
-  }
-
-
 
 });
 
