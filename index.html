@@ -10,6 +10,9 @@
     <!--Vendor Bootstrap-icons-->
     <link rel="stylesheet" href="assets/vendor/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
         <!--CSS-->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -137,16 +140,57 @@
   </div>
 </section>
 
+<section class="contact" >
+  <div class="container container-contact">
+
+    <div class="section-title">
+      <h2>Contactame</h2>
+    </div>
+
+    <div class="card-contact">
+      <p class="msj">Puedes contactarme por estos medios. ¡Gracias por visitar mi portafolio!</p>
+
+      <div class="links-social">
+        <a href="https://wa.me/tu-numero" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.indeed.com/profile/tu-perfil" class="indeed" aria-label="Indeed"><i class="bi bi-briefcase"></i></a>
+        <a href="mailto:tuemail@gmail.com" class="gmail" aria-label="Gmail"><i class="bi bi-envelope"></i></a>
+      </div>
+
+      <div class="btn-cv">
+        <a href="assets/docs/cv_Lopez_Martinez_Bryan_Jair.pdf" class="btn-cv-floating-inside" download aria-label="Descargar CV">
+          📄 Mi CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- btn VC -->
 <a href="assets/docs/cv_Lopez_Martinez_Bryan_Jair.pdf" class="btn-cv-floating" download aria-label="Descargar CV">
   📄 Mi CV
 </a>
 
     </main>
+
+  <footer class="footer-narrativo">
+    <p> Gracias por recorrer este universo visual. Cada componente cuenta una historia, cada animación tiene alma. </p>
+    <small> Diseñado con pasión por Bryan &mdash; México, 2025 </small>
+  </footer>
+
+    
     <!--js-->
     <script src="assets/js/app.js"></script>
     <!--Vendor Bootstrap js-->
     <script src="assets/vendor/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // duración en ms
+    once: true,    // solo una vez por scroll
+  });
+</script>
+
 
 </body>
 </html>
