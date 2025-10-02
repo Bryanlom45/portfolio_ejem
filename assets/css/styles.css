@@ -485,7 +485,25 @@ section {
   align-items: center;
   gap: 15px;
   cursor: pointer;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+  transform: scale(1);
+  display: block;
 }
+
+.card_project.oculta {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.card_project.featured {
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 /* Imagen del proyecto */
 .project_wrap img {
@@ -628,7 +646,13 @@ section {
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-filter.active {
+  background: var(--color-accent);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .filter-close {

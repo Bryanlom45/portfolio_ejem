@@ -31,14 +31,18 @@ const proyectos = [
     descripcion: "(PWA) con Angular, Nest.js",
     imagen: "assets/img/projects/slidecore.jpeg",
     github: "#",
-    demo: "#"
+    demo: "#",
+    tags: ["ajax", "angular"],
+    destacado: true
   },
   {
     titulo: "Portafolio Creativo",
     descripcion: "HTML, CSS, animaciones personalizadas",
     imagen: "assets/img/projects/ctg.jpeg",
     github: "#",
-    demo: "#"
+    demo: "#",
+    tags: ["php", "ajax"],
+    destacado: false
   },
 
     {
@@ -46,8 +50,12 @@ const proyectos = [
     descripcion: "HTML, CSS, animaciones personalizadas",
     imagen: "assets/img/projects/spa.jpeg",
     github: "#",
-    demo: "#"
-  },
+    demo: "#",
+    tags: ["php", "laravel"],
+    destacado: true
+
+  }
+  
   // Agrega más proyectos aquí
 ];
 
@@ -57,6 +65,7 @@ const container = document.getElementById("projectsContainer");
 proyectos.forEach(proyecto => {
   const card = document.createElement("div");
   card.classList.add("card_project");
+  card.setAttribute("data-tags", proyecto.tags.join(","));
 
   card.innerHTML = `
     <div class="project_wrap">
@@ -71,9 +80,15 @@ proyectos.forEach(proyecto => {
       </div>
     </div>
   `;
+
+  if (proyecto.destacado) {
+  card.classList.add("featured");
+}
   
   container.appendChild(card);
 });
+
+
 
 const togglebtn = document.getElementById('filter-toggle');
 const panel = document.getElementById('filter-panel');
@@ -114,6 +129,34 @@ filterButtons.forEach(button => {
     togglebtn.setAttribute('aria-expanded', false);
     panel.hidden = true;
     panel.classList.remove('active');
+  });
+});
+
+const botonesFiltro = document.querySelectorAll(".btn-filter");
+
+botonesFiltro.forEach(boton => {
+  boton.addEventListener("click", () => {
+    const filtro = boton.dataset.filter;
+    const tarjetas = document.querySelectorAll(".card_project");
+
+        // 🔥 Aquí agregas la clase "active" al botón seleccionado
+    botonesFiltro.forEach(b => b.classList.remove("active"));
+    boton.classList.add("active");
+
+    tarjetas.forEach(card => {
+  const tags = card.dataset.tags.split(",");
+  const mostrar = filtro === "all" || tags.includes(filtro);
+
+  if (mostrar) {
+    card.classList.remove("oculta");
+    card.style.display = "block"; // vuelve al layout
+  } else {
+    card.classList.add("oculta");
+    setTimeout(() => {
+      card.style.display = "none"; // quita el espacio después de la animación
+    }, 400); // mismo tiempo que la transición CSS
+  }
+});
   });
 });
 
