@@ -14,8 +14,8 @@ export function renderProyectos(proyectos, containerId = "projectsContainer") {
           <h4>${proyecto.titulo}</h4>
           <p>${proyecto.descripcion}</p>
           <div class="links_project">
-            <a href="${proyecto.github}" aria-label="Ver código en GitHub"><i class="bi bi-github"></i></a>
-            <a href="${proyecto.demo}" aria-label="Ver proyecto"><i class="bi bi-eye"></i></a>
+            <a href="${proyecto.github}" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="bi bi-github"></i></a>
+            <a href="${proyecto.demo}" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>

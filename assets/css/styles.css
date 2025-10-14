@@ -80,16 +80,18 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   color: var(--color-light);
-  margin: 0;
-  font-size: 64px;
+  margin: 0 0 20px 0;         /* espacio inferior para separar del h2 */
+  font-size: 48px;            /* ligeramente más compacto para pantallas medianas */
   font-weight: 700;
-  line-height: 56px;
+  line-height: 1.2;           /* más flexible que un valor fijo */
 }
 
 #hero h2 {
   color: var(--color-light);
-  font-size: 23px;
-  margin: 15px 0 0 0;
+  font-size: 20px;            /* más legible en pantallas modernas */
+  margin: 0 auto;             /* centrado si el contenedor lo permite */
+  max-width: 800px;           /* evita que el texto se extienda demasiado */
+  line-height: 1.6;           /* mejora la lectura del párrafo */
 }
 
 /*-------------------------------------------------------
@@ -666,20 +668,17 @@ section .container {
   section contact
 =========================*/
 .contact{
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
-.container-contact {
+.container-contact{
 
-  box-shadow:rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  max-width: 1150px;
-  margin: auto;
 }
 
 .card-contact {
+  margin-top: 40px;
+
   padding: 30px;
-  margin: 10px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.822);
   background: var(--color-card);
@@ -689,7 +688,8 @@ section .container {
 .msj{
   font-size: 18px;
   color: var(--color-light);
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+  
 }
 
 .links-social{
@@ -845,7 +845,7 @@ section .container {
 @media (max-width: 992px){
   #hero h1 {
     font-size: 50px;
-    line-height: 28px;
+    line-height: 50px;
   }
 
   #hero h2 {
@@ -859,7 +859,7 @@ section .container {
 
   #hero h1 {
     font-size: 30px;
-    line-height: 14px;
+    line-height: 30px;
   }
 
   #hero h2 {
